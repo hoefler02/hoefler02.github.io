@@ -1,3 +1,3 @@
-# my blog
+# Writeups
 
-this blog is dedicated to CTF writeups
+This is a blog used mostly for CTF writeups. Enjoy!

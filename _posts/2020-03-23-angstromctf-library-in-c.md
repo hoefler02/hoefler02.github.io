@@ -2,7 +2,7 @@
 layout: post
 title: AngstromCTF 2020 - LIBrary in C
 excerpt: "Writeup for format string ret2libc gadget challenge from AngstromCTF 2020"
-categories: [pwn angstromctf]
+categories: [AngstromCTF 2020]
 ---
 
 LIBrary in C was the fifth challenge in the binary exploitation category of AngstromCTF 2020. The challenge supplies us with an executable, some source code (below), and a libc file. Usually whenever a pwnable challenge gives a libc file, some sort of ret2libc is involved. 

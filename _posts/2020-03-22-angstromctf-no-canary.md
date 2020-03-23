@@ -2,7 +2,7 @@
 layout: post
 title: AngstromCTF 2020 - No Canary
 excerpt: "Writeup for basic buffer overflow challenge from AngstromCTF 2020"
-categories: [AngstromCTF 2020]
+categories: [AngstromCTF 2020, pwn]
 ---
 
 ### No Canary

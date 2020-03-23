@@ -2,7 +2,7 @@
 layout: post
 title: AngstromCTF 2020 - Canary
 excerpt: "Writeup for buffer overflow challenge with canary from AngstromCTF 2020"
-categories: [AngstromCTF 2020]
+categories: [AngstromCTF 2020, pwn]
 ---
 
 Canary was the second challenge in the Binary category from AngstromCTF 2020, and was very similar to the first challenge which was called [no canary]({ post_url 2020-03-22-angstromctf-no-canary }). The challenge provided an executable and some source code (below).

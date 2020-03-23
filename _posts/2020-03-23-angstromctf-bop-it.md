@@ -2,7 +2,7 @@
 layout: post
 title: AngstromCTF 2020 - Bop It
 excerpt: "Writeup for memory leak challenge from AngstromCTF 2020"
-categories: [AngstromCTF 2020]
+categories: [AngstromCTF 2020, pwn]
 ---
 
 Bop It was the third challenge in the Binary section of AngstromCTF. Although the bug was fairly simple, the challenge only accumulated 162 solves. The challenge supplies us with an executable and some source code (below).

@@ -59,7 +59,7 @@ int main() {
 }
 {% endhighlight %}
 
-Upon first glance the code looks somewhat complicated. After some trial and error though, it is clear that there is a bug in the `write` call when action is "Flag It!". The variable `wrong` is initialized with a size of `strlen(guess)+35`, and is written to stdout. The problem is that the strlen function stops at null bytes, but the guessLen variable will not (it is set from the read function). Whener guessLen+35 gets larger than the `wrong` variable to be written, `write` will continue to give data after the end of the `wrong` buffer, and memory will be leaked. Seeing that the flag has been opened whenever this write is called reassures us that we are on the right track.
+Upon first glance the code looks somewhat complicated. After some trial and error though, it is clear that there is a bug in the `write` call when action is "Flag It!". The variable `wrong` is initialized with a size of `strlen(guess)+35`, and is written to stdout. The problem is that the strlen function stops at null bytes, but the guessLen variable will not (it is set from the read function). Whenever guessLen+35 gets larger than the `wrong` variable to be written, `write` will continue to give data after the end of the `wrong` buffer, and memory will be leaked. Seeing that the flag has been opened whenever this write is called reassures us that we are on the right track.
 
 Since the exploit is simple I used inline python. You can see that it takes a few times before hitting the "Flag It!" action, but once we do memory is leaked.
 

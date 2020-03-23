@@ -170,7 +170,7 @@ fish: Process 367, './canary' 'python -c 'print "A" * 100' |...' terminated by s
 root@9903d51849b1 /pwn#
 ```
 
-So how might we pass this check while still overwriting the return pointer? Bruteforcing could be an option, but since this is a 64-bit binary the stack cookie is a 64 bit address, which would not be very easy to bruteforce. Reexaminating the code though we can see that our first parameter to gets is passed right into the first parameter of printf! This creates a [format string vulnerability](https://en.wikipedia.org/wiki/Uncontrolled_format_string) which allows us to leak values off of the stack. Since our string is passed to the first parameter to printf, we can include things like `%x`. This will cause values on the stack to be interpreted as other parameters of printf, and they will be printed out for us. Since the stack cookie is just a pointer on the stack, we can leak it with the first call to gets and printf, and can do our normal buffer overflow on the second call to gets (making sure to keep the leaked stack cookie in tact).
+So how might we pass this check while still overwriting the return pointer? Bruteforcing could be an option, but since this is a 64-bit binary the stack cookie is a 64 bit address, which would not be very easy to bruteforce. Reexaminating the code though we can see that our input to gets is passed right into the first parameter of printf! This creates a [format string vulnerability](https://en.wikipedia.org/wiki/Uncontrolled_format_string) which allows us to leak values off of the stack. Since our string is passed to the first parameter to printf, we can include things like `%x`. This will cause values on the stack to be interpreted as other parameters of printf, and they will be printed out for us. Since the stack cookie is just a pointer on the stack, we can leak it with the first call to gets and printf, and can do our normal buffer overflow on the second call to gets (making sure to keep the leaked stack cookie in tact).
 
 Now that we know what we have a plan, let's hop into GDB to get started! With a little bit of poking around we can find that the stack cookie is stored at the address `0x7fffffffe648`, or `$rbp-0x8` (it is moved here in instruction `greet+17`). 
 
@@ -221,7 +221,7 @@ Breakpoint 1, 0x00000000004008a6 in greet ()
 0x7fffffffe680:	0x0000000000000001	0x00007fffffffe758
 ```
 
-Next, we can set a breakpoint after the format string vulnerable printf, and leaked some pointers off the stack to get an idea of where the stack cookie lies. 
+Next, we can set a breakpoint after the format string vulnerable printf, and leak some pointers off the stack to get an idea of where the stack cookie lies. 
 
 ```
 (gdb) b *0x0000000000400933

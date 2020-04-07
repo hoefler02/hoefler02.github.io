@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/hoefler02
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://hoefler.dev
+  * I am hoefler02 (https://keybase.io/hoefler02) on keybase.
+  * I have a public key ASBANzbOuXsTLWWSsalqQywptTzrfAk3eHxbFwOLg58DVQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120403736ceb97b132d6592b1a96a432c29b53ceb7c0937787c5b17038b839f03550a",
+      "host": "keybase.io",
+      "kid": "0120403736ceb97b132d6592b1a96a432c29b53ceb7c0937787c5b17038b839f03550a",
+      "uid": "8bf2289fcc354f980dd88c6db31f5f19",
+      "username": "hoefler02"
+    },
+    "merkle_root": {
+      "ctime": 1586274489,
+      "hash": "433c1fc52c1d87d29e8894f22795c0c33399f3be942dbbd3179f7c7da686205180574fd918c6e3ed1a4f2f9a03cdff840b0a8cf07cdc4a6028d0be4b34a0b0aa",
+      "hash_meta": "25df7e8b1f27386823aca439e7bd1b447ffef3c66e724273a3a328dcd1344e28",
+      "seqno": 15814777
+    },
+    "service": {
+      "entropy": "d77gL+ozHtsXyIsp3zLrltJe",
+      "hostname": "hoefler.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.3.1"
+  },
+  "ctime": 1586274501,
+  "expire_in": 504576000,
+  "prev": "46db7d4a0fe68f0744e425adfaf146d72ff7fdf191ecea60bca6160986968735",
+  "seqno": 10,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgQDc2zrl7Ey1lkrGpakMsKbU863wJN3h8WxcDi4OfA1UKp3BheWxvYWTESpcCCsQgRtt9Sg/mjwdE5CWt+vFG1y/3/fGR7OpgvKYWCYaWhzXEIEpK9aeWDLBomw3D0OYcfQnUT0Czfy0aCR2iSLBd2K8jAgHCo3NpZ8RAzwwr5sjbhZygMihv+bTznyv1sTv+E7J9hlps132lxGHd5KwZeztZF6yP0JEpqJuS8zkEml1Ym2IoqF6h6UXVBKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIMU/Du+4VX6MckMtaUsL/ekrMXo97yvE0RsEXInEvyVXo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/hoefler02
+
+==================================================================

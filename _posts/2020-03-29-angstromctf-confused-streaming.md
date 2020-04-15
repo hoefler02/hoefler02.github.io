@@ -2,7 +2,7 @@
 layout: post
 title: AngstromCTF 2020 - Confused Streaming
 excerpt: "Writeup for stream cipher cryptography challenge from AngstromCTF 2020"
-categories: [AngstromCTF 2020, crypto]
+categories: [crypto]
 ---
 
 Confused Streaming was the fourth challenge from AngstromCTF 2020. The challenge provides us with some python code (seen below) and a challenge server. 

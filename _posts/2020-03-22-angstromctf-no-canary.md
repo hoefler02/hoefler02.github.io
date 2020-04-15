@@ -2,7 +2,7 @@
 layout: post
 title: AngstromCTF 2020 - No Canary
 excerpt: "Writeup for basic buffer overflow challenge from AngstromCTF 2020"
-categories: [AngstromCTF 2020, pwn]
+categories: [pwn]
 ---
 
 No Canary was the first challenge in the Binary category from AngstromCTF 2020. The challenge provided a 64-bit executable and some source code (below). Viewing the source, it is apparent that a 20 character buffer is initialized, and the vulnerable function `gets` allows us to supply input into that buffer. Since `gets` doesn't limit how many characters we write into the buffer, we can write more than 20, resulting in a [buffer overflow](https://en.wikipedia.org/wiki/Buffer_overflow).

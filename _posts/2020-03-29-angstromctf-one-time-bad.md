@@ -2,7 +2,7 @@
 layout: post
 title: AngstromCTF 2020 - One Time Bad
 excerpt: "Writeup for one time pad challenge from AngstromCTF 2020"
-categories: [AngstromCTF 2020, crypto]
+categories: [crypto]
 ---
 
 One Time Bad was the fifth challenge from AngstromCTF 2020. The challenge provides us with some python code (below) and a challenge server. 

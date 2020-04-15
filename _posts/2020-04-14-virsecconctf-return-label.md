@@ -5,12 +5,11 @@ excerpt: "Writeup for ret2libc buffer overflow challenge from VirSecConCTF 2020"
 categories: [pwn]
 ---
 
-Return label was fourth pwn challenge from VirSecCon2020. The challenge provided a binary and a challenge server. Running the binary actually gives us the address for printf in libc and asks where we should send a package (seen below).
+Return label was fourth pwn challenge from VirSecCon2020. The challenge provided a binary and a challenge server. Running the binary gives us the address for printf in libc and asks where we should send a package (seen below).
 
 ```
 michael@computer:~/Documents/CTF/virseccon/retlab$ ./challenge 
 Where should we send your package (printf is at 00007f580de11e80)? 
-
 ```
 
 
@@ -59,7 +58,7 @@ Seeing that there is no "flag" or "secret" functions we can safely assume that w
 \           0x0000085a      c3             ret
 ```
 
-Looking at the code for vuln, we can see a call to the dangerous "gets" function which does not check buffer size before writing (leading to a buffer overflow). Now that we have an idea of what we need to do we can use the [one_gadget](https://github.com/david942j/one_gadget) tool to find an offset that will give us RCE (seen below). Since the challenge did not provide a libc, I just used the libc on my Ubuntu 16.04 docker, and it worked!
+Looking at the code for vuln, we can see a call to the dangerous "gets" function which does not check buffer size before writing (leading to a buffer overflow). Now that we have an idea of what we need to do we can use the [one_gadget](https://github.com/david942j/one_gadget) tool to find an offset that will give us RCE (seen below). Since the challenge did not provide a libc, I just used the libc included in my Ubuntu distribution, and it worked!
 
 ```
 michael@computer:~/Documents/CTF/virseccon/retlab$ one_gadget /lib/x86_64-linux-gnu/libc-2.27.so

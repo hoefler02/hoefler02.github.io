@@ -5,7 +5,7 @@ excerpt: "Writeup for data leak challenge from VirSecConCTF 2020"
 categories: [pwn]
 ---
 
-Tackstack was a 100 point challenge during VirSecConCTF 2020. It was actually very simple, but somehow only accumulated 59 solves. The challenge gives us a command to connect to the challenge. No source code is provided. Below is a snapshot of the challenge server in action. Basically it allows us to type in "tacks" to be added to the stack.
+Tackstack was a 100 point challenge during VirSecConCTF 2020. We are given a command to connect to the challenge with no source code provided. Below is a snapshot of the challenge server in action. Basically it allows us to type in "tacks" to be added to the stack.
 
 ```
 michael@computer:~/Documents/CTF/virseccon/tackstack$ nc jh2i.com 50038
@@ -44,7 +44,7 @@ Your tack: %x
 ------------------------
 ```
 
-In the last prompt, where I entered `%x`, you can see that a hex number was returned. This indicates a format string vulnerability. Since we were not provided source code or a binary to attempt code redirection, I wrote a script to leak all strings off of the stack to see if there was anything useful.
+In the last prompt, where I entered `%x`, you can see that a hex number was returned. This indicates a format string vulnerability. Since we were not provided source code or a binary to collect any further information, I wrote a script to leak all strings off of the stack to see if there was anything useful.
 
 {% highlight python %}
 from pwn import *
@@ -78,4 +78,4 @@ FLAG=LLS{tack_stack?_more_like_stack_attack}
 EOF
 ```
 
-We can see that the flag `LLS{tack_stack?_more_like_stack_attack}` was on the stack all along! This can be submitted for 100 challenge points.
+We can see that the flag `LLS{tack_stack?_more_like_stack_attack}` was on the stack all along! I hope this was helpful!

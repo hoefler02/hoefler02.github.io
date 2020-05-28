@@ -58,7 +58,7 @@ $$b^2 \ge 4ac$$
 
 This will eliminate the possiblilty of imaginary numbers that could come about by taking the square root of a negative number. The next three checks ensure that none of the variables are zero.(easy enough). The fifth check (seen below) is slightly more complicated.
 
-$$(\sqrt{b^2-4ac})^2 \ne b^2-4ac$$
+$$\left(\sqrt{b^2-4ac}\right)^2 \ne b^2-4ac$$
 
 At first glance it seems like this check will never be passed, but since the script uses python's [decimal](https://docs.python.org/2/library/decimal.html) library it is actually possible. The `getcontext().prec = 1000` line in the script tells us that it will round to 1000 decimal places, so whenever the square root returns something irrational, it will be rounded, and the square will not exactly equal the right side of the equation. This eliminates the possibility of any combinations with rational roots passing the check. Finally, the script makes sure that none of our variables exceed 1000.
 
